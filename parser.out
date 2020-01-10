@@ -1,0 +1,865 @@
+Created by PLY version 3.4 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> statement
+Rule 1     statement -> expression
+Rule 2     expression -> expression EXIUNTIL expression
+Rule 3     expression -> expression FAUNTIL expression
+Rule 4     expression -> expression AND expression
+Rule 5     expression -> expression OR expression
+Rule 6     expression -> expression THEN expression
+Rule 7     expression -> EXINEXT expression
+Rule 8     expression -> EXIALWAYS expression
+Rule 9     expression -> EXIEVENTUALLY expression
+Rule 10    expression -> FANEXT expression
+Rule 11    expression -> FAALWAYS expression
+Rule 12    expression -> FAEVENTUALLY expression
+Rule 13    expression -> NOT expression
+Rule 14    expression -> LPAREN expression RPAREN
+Rule 15    expression -> NAME
+Rule 16    expression -> TRUE
+
+Terminals, with rules where they appear
+
+AND                  : 4
+EXIALWAYS            : 8
+EXIEVENTUALLY        : 9
+EXINEXT              : 7
+EXIUNTIL             : 2
+FAALWAYS             : 11
+FAEVENTUALLY         : 12
+FANEXT               : 10
+FAUNTIL              : 3
+LPAREN               : 14
+NAME                 : 15
+NOT                  : 13
+OR                   : 5
+RPAREN               : 14
+THEN                 : 6
+TRUE                 : 16
+error                : 
+
+Nonterminals, with rules where they appear
+
+expression           : 1 2 2 3 3 4 4 5 5 6 6 7 8 9 10 11 12 13 14
+statement            : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . statement
+    (1) statement -> . expression
+    (2) expression -> . expression EXIUNTIL expression
+    (3) expression -> . expression FAUNTIL expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression OR expression
+    (6) expression -> . expression THEN expression
+    (7) expression -> . EXINEXT expression
+    (8) expression -> . EXIALWAYS expression
+    (9) expression -> . EXIEVENTUALLY expression
+    (10) expression -> . FANEXT expression
+    (11) expression -> . FAALWAYS expression
+    (12) expression -> . FAEVENTUALLY expression
+    (13) expression -> . NOT expression
+    (14) expression -> . LPAREN expression RPAREN
+    (15) expression -> . NAME
+    (16) expression -> . TRUE
+
+    EXINEXT         shift and go to state 3
+    EXIALWAYS       shift and go to state 1
+    EXIEVENTUALLY   shift and go to state 5
+    FANEXT          shift and go to state 9
+    FAALWAYS        shift and go to state 6
+    FAEVENTUALLY    shift and go to state 4
+    NOT             shift and go to state 8
+    LPAREN          shift and go to state 2
+    NAME            shift and go to state 12
+    TRUE            shift and go to state 11
+
+    expression                     shift and go to state 10
+    statement                      shift and go to state 7
+
+state 1
+
+    (8) expression -> EXIALWAYS . expression
+    (2) expression -> . expression EXIUNTIL expression
+    (3) expression -> . expression FAUNTIL expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression OR expression
+    (6) expression -> . expression THEN expression
+    (7) expression -> . EXINEXT expression
+    (8) expression -> . EXIALWAYS expression
+    (9) expression -> . EXIEVENTUALLY expression
+    (10) expression -> . FANEXT expression
+    (11) expression -> . FAALWAYS expression
+    (12) expression -> . FAEVENTUALLY expression
+    (13) expression -> . NOT expression
+    (14) expression -> . LPAREN expression RPAREN
+    (15) expression -> . NAME
+    (16) expression -> . TRUE
+
+    EXINEXT         shift and go to state 3
+    EXIALWAYS       shift and go to state 1
+    EXIEVENTUALLY   shift and go to state 5
+    FANEXT          shift and go to state 9
+    FAALWAYS        shift and go to state 6
+    FAEVENTUALLY    shift and go to state 4
+    NOT             shift and go to state 8
+    LPAREN          shift and go to state 2
+    NAME            shift and go to state 12
+    TRUE            shift and go to state 11
+
+    expression                     shift and go to state 13
+
+state 2
+
+    (14) expression -> LPAREN . expression RPAREN
+    (2) expression -> . expression EXIUNTIL expression
+    (3) expression -> . expression FAUNTIL expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression OR expression
+    (6) expression -> . expression THEN expression
+    (7) expression -> . EXINEXT expression
+    (8) expression -> . EXIALWAYS expression
+    (9) expression -> . EXIEVENTUALLY expression
+    (10) expression -> . FANEXT expression
+    (11) expression -> . FAALWAYS expression
+    (12) expression -> . FAEVENTUALLY expression
+    (13) expression -> . NOT expression
+    (14) expression -> . LPAREN expression RPAREN
+    (15) expression -> . NAME
+    (16) expression -> . TRUE
+
+    EXINEXT         shift and go to state 3
+    EXIALWAYS       shift and go to state 1
+    EXIEVENTUALLY   shift and go to state 5
+    FANEXT          shift and go to state 9
+    FAALWAYS        shift and go to state 6
+    FAEVENTUALLY    shift and go to state 4
+    NOT             shift and go to state 8
+    LPAREN          shift and go to state 2
+    NAME            shift and go to state 12
+    TRUE            shift and go to state 11
+
+    expression                     shift and go to state 14
+
+state 3
+
+    (7) expression -> EXINEXT . expression
+    (2) expression -> . expression EXIUNTIL expression
+    (3) expression -> . expression FAUNTIL expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression OR expression
+    (6) expression -> . expression THEN expression
+    (7) expression -> . EXINEXT expression
+    (8) expression -> . EXIALWAYS expression
+    (9) expression -> . EXIEVENTUALLY expression
+    (10) expression -> . FANEXT expression
+    (11) expression -> . FAALWAYS expression
+    (12) expression -> . FAEVENTUALLY expression
+    (13) expression -> . NOT expression
+    (14) expression -> . LPAREN expression RPAREN
+    (15) expression -> . NAME
+    (16) expression -> . TRUE
+
+    EXINEXT         shift and go to state 3
+    EXIALWAYS       shift and go to state 1
+    EXIEVENTUALLY   shift and go to state 5
+    FANEXT          shift and go to state 9
+    FAALWAYS        shift and go to state 6
+    FAEVENTUALLY    shift and go to state 4
+    NOT             shift and go to state 8
+    LPAREN          shift and go to state 2
+    NAME            shift and go to state 12
+    TRUE            shift and go to state 11
+
+    expression                     shift and go to state 15
+
+state 4
+
+    (12) expression -> FAEVENTUALLY . expression
+    (2) expression -> . expression EXIUNTIL expression
+    (3) expression -> . expression FAUNTIL expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression OR expression
+    (6) expression -> . expression THEN expression
+    (7) expression -> . EXINEXT expression
+    (8) expression -> . EXIALWAYS expression
+    (9) expression -> . EXIEVENTUALLY expression
+    (10) expression -> . FANEXT expression
+    (11) expression -> . FAALWAYS expression
+    (12) expression -> . FAEVENTUALLY expression
+    (13) expression -> . NOT expression
+    (14) expression -> . LPAREN expression RPAREN
+    (15) expression -> . NAME
+    (16) expression -> . TRUE
+
+    EXINEXT         shift and go to state 3
+    EXIALWAYS       shift and go to state 1
+    EXIEVENTUALLY   shift and go to state 5
+    FANEXT          shift and go to state 9
+    FAALWAYS        shift and go to state 6
+    FAEVENTUALLY    shift and go to state 4
+    NOT             shift and go to state 8
+    LPAREN          shift and go to state 2
+    NAME            shift and go to state 12
+    TRUE            shift and go to state 11
+
+    expression                     shift and go to state 16
+
+state 5
+
+    (9) expression -> EXIEVENTUALLY . expression
+    (2) expression -> . expression EXIUNTIL expression
+    (3) expression -> . expression FAUNTIL expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression OR expression
+    (6) expression -> . expression THEN expression
+    (7) expression -> . EXINEXT expression
+    (8) expression -> . EXIALWAYS expression
+    (9) expression -> . EXIEVENTUALLY expression
+    (10) expression -> . FANEXT expression
+    (11) expression -> . FAALWAYS expression
+    (12) expression -> . FAEVENTUALLY expression
+    (13) expression -> . NOT expression
+    (14) expression -> . LPAREN expression RPAREN
+    (15) expression -> . NAME
+    (16) expression -> . TRUE
+
+    EXINEXT         shift and go to state 3
+    EXIALWAYS       shift and go to state 1
+    EXIEVENTUALLY   shift and go to state 5
+    FANEXT          shift and go to state 9
+    FAALWAYS        shift and go to state 6
+    FAEVENTUALLY    shift and go to state 4
+    NOT             shift and go to state 8
+    LPAREN          shift and go to state 2
+    NAME            shift and go to state 12
+    TRUE            shift and go to state 11
+
+    expression                     shift and go to state 17
+
+state 6
+
+    (11) expression -> FAALWAYS . expression
+    (2) expression -> . expression EXIUNTIL expression
+    (3) expression -> . expression FAUNTIL expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression OR expression
+    (6) expression -> . expression THEN expression
+    (7) expression -> . EXINEXT expression
+    (8) expression -> . EXIALWAYS expression
+    (9) expression -> . EXIEVENTUALLY expression
+    (10) expression -> . FANEXT expression
+    (11) expression -> . FAALWAYS expression
+    (12) expression -> . FAEVENTUALLY expression
+    (13) expression -> . NOT expression
+    (14) expression -> . LPAREN expression RPAREN
+    (15) expression -> . NAME
+    (16) expression -> . TRUE
+
+    EXINEXT         shift and go to state 3
+    EXIALWAYS       shift and go to state 1
+    EXIEVENTUALLY   shift and go to state 5
+    FANEXT          shift and go to state 9
+    FAALWAYS        shift and go to state 6
+    FAEVENTUALLY    shift and go to state 4
+    NOT             shift and go to state 8
+    LPAREN          shift and go to state 2
+    NAME            shift and go to state 12
+    TRUE            shift and go to state 11
+
+    expression                     shift and go to state 18
+
+state 7
+
+    (0) S' -> statement .
+
+
+
+state 8
+
+    (13) expression -> NOT . expression
+    (2) expression -> . expression EXIUNTIL expression
+    (3) expression -> . expression FAUNTIL expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression OR expression
+    (6) expression -> . expression THEN expression
+    (7) expression -> . EXINEXT expression
+    (8) expression -> . EXIALWAYS expression
+    (9) expression -> . EXIEVENTUALLY expression
+    (10) expression -> . FANEXT expression
+    (11) expression -> . FAALWAYS expression
+    (12) expression -> . FAEVENTUALLY expression
+    (13) expression -> . NOT expression
+    (14) expression -> . LPAREN expression RPAREN
+    (15) expression -> . NAME
+    (16) expression -> . TRUE
+
+    EXINEXT         shift and go to state 3
+    EXIALWAYS       shift and go to state 1
+    EXIEVENTUALLY   shift and go to state 5
+    FANEXT          shift and go to state 9
+    FAALWAYS        shift and go to state 6
+    FAEVENTUALLY    shift and go to state 4
+    NOT             shift and go to state 8
+    LPAREN          shift and go to state 2
+    NAME            shift and go to state 12
+    TRUE            shift and go to state 11
+
+    expression                     shift and go to state 19
+
+state 9
+
+    (10) expression -> FANEXT . expression
+    (2) expression -> . expression EXIUNTIL expression
+    (3) expression -> . expression FAUNTIL expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression OR expression
+    (6) expression -> . expression THEN expression
+    (7) expression -> . EXINEXT expression
+    (8) expression -> . EXIALWAYS expression
+    (9) expression -> . EXIEVENTUALLY expression
+    (10) expression -> . FANEXT expression
+    (11) expression -> . FAALWAYS expression
+    (12) expression -> . FAEVENTUALLY expression
+    (13) expression -> . NOT expression
+    (14) expression -> . LPAREN expression RPAREN
+    (15) expression -> . NAME
+    (16) expression -> . TRUE
+
+    EXINEXT         shift and go to state 3
+    EXIALWAYS       shift and go to state 1
+    EXIEVENTUALLY   shift and go to state 5
+    FANEXT          shift and go to state 9
+    FAALWAYS        shift and go to state 6
+    FAEVENTUALLY    shift and go to state 4
+    NOT             shift and go to state 8
+    LPAREN          shift and go to state 2
+    NAME            shift and go to state 12
+    TRUE            shift and go to state 11
+
+    expression                     shift and go to state 20
+
+state 10
+
+    (1) statement -> expression .
+    (2) expression -> expression . EXIUNTIL expression
+    (3) expression -> expression . FAUNTIL expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . OR expression
+    (6) expression -> expression . THEN expression
+
+    $end            reduce using rule 1 (statement -> expression .)
+    EXIUNTIL        shift and go to state 23
+    FAUNTIL         shift and go to state 24
+    AND             shift and go to state 21
+    OR              shift and go to state 25
+    THEN            shift and go to state 22
+
+
+state 11
+
+    (16) expression -> TRUE .
+
+    EXIUNTIL        reduce using rule 16 (expression -> TRUE .)
+    FAUNTIL         reduce using rule 16 (expression -> TRUE .)
+    AND             reduce using rule 16 (expression -> TRUE .)
+    OR              reduce using rule 16 (expression -> TRUE .)
+    THEN            reduce using rule 16 (expression -> TRUE .)
+    $end            reduce using rule 16 (expression -> TRUE .)
+    RPAREN          reduce using rule 16 (expression -> TRUE .)
+
+
+state 12
+
+    (15) expression -> NAME .
+
+    EXIUNTIL        reduce using rule 15 (expression -> NAME .)
+    FAUNTIL         reduce using rule 15 (expression -> NAME .)
+    AND             reduce using rule 15 (expression -> NAME .)
+    OR              reduce using rule 15 (expression -> NAME .)
+    THEN            reduce using rule 15 (expression -> NAME .)
+    $end            reduce using rule 15 (expression -> NAME .)
+    RPAREN          reduce using rule 15 (expression -> NAME .)
+
+
+state 13
+
+    (8) expression -> EXIALWAYS expression .
+    (2) expression -> expression . EXIUNTIL expression
+    (3) expression -> expression . FAUNTIL expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . OR expression
+    (6) expression -> expression . THEN expression
+
+    $end            reduce using rule 8 (expression -> EXIALWAYS expression .)
+    RPAREN          reduce using rule 8 (expression -> EXIALWAYS expression .)
+    EXIUNTIL        shift and go to state 23
+    FAUNTIL         shift and go to state 24
+    AND             shift and go to state 21
+    OR              shift and go to state 25
+    THEN            shift and go to state 22
+
+  ! EXIUNTIL        [ reduce using rule 8 (expression -> EXIALWAYS expression .) ]
+  ! FAUNTIL         [ reduce using rule 8 (expression -> EXIALWAYS expression .) ]
+  ! AND             [ reduce using rule 8 (expression -> EXIALWAYS expression .) ]
+  ! OR              [ reduce using rule 8 (expression -> EXIALWAYS expression .) ]
+  ! THEN            [ reduce using rule 8 (expression -> EXIALWAYS expression .) ]
+
+
+state 14
+
+    (14) expression -> LPAREN expression . RPAREN
+    (2) expression -> expression . EXIUNTIL expression
+    (3) expression -> expression . FAUNTIL expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . OR expression
+    (6) expression -> expression . THEN expression
+
+    RPAREN          shift and go to state 26
+    EXIUNTIL        shift and go to state 23
+    FAUNTIL         shift and go to state 24
+    AND             shift and go to state 21
+    OR              shift and go to state 25
+    THEN            shift and go to state 22
+
+
+state 15
+
+    (7) expression -> EXINEXT expression .
+    (2) expression -> expression . EXIUNTIL expression
+    (3) expression -> expression . FAUNTIL expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . OR expression
+    (6) expression -> expression . THEN expression
+
+    $end            reduce using rule 7 (expression -> EXINEXT expression .)
+    RPAREN          reduce using rule 7 (expression -> EXINEXT expression .)
+    EXIUNTIL        shift and go to state 23
+    FAUNTIL         shift and go to state 24
+    AND             shift and go to state 21
+    OR              shift and go to state 25
+    THEN            shift and go to state 22
+
+  ! EXIUNTIL        [ reduce using rule 7 (expression -> EXINEXT expression .) ]
+  ! FAUNTIL         [ reduce using rule 7 (expression -> EXINEXT expression .) ]
+  ! AND             [ reduce using rule 7 (expression -> EXINEXT expression .) ]
+  ! OR              [ reduce using rule 7 (expression -> EXINEXT expression .) ]
+  ! THEN            [ reduce using rule 7 (expression -> EXINEXT expression .) ]
+
+
+state 16
+
+    (12) expression -> FAEVENTUALLY expression .
+    (2) expression -> expression . EXIUNTIL expression
+    (3) expression -> expression . FAUNTIL expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . OR expression
+    (6) expression -> expression . THEN expression
+
+    $end            reduce using rule 12 (expression -> FAEVENTUALLY expression .)
+    RPAREN          reduce using rule 12 (expression -> FAEVENTUALLY expression .)
+    EXIUNTIL        shift and go to state 23
+    FAUNTIL         shift and go to state 24
+    AND             shift and go to state 21
+    OR              shift and go to state 25
+    THEN            shift and go to state 22
+
+  ! EXIUNTIL        [ reduce using rule 12 (expression -> FAEVENTUALLY expression .) ]
+  ! FAUNTIL         [ reduce using rule 12 (expression -> FAEVENTUALLY expression .) ]
+  ! AND             [ reduce using rule 12 (expression -> FAEVENTUALLY expression .) ]
+  ! OR              [ reduce using rule 12 (expression -> FAEVENTUALLY expression .) ]
+  ! THEN            [ reduce using rule 12 (expression -> FAEVENTUALLY expression .) ]
+
+
+state 17
+
+    (9) expression -> EXIEVENTUALLY expression .
+    (2) expression -> expression . EXIUNTIL expression
+    (3) expression -> expression . FAUNTIL expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . OR expression
+    (6) expression -> expression . THEN expression
+
+    $end            reduce using rule 9 (expression -> EXIEVENTUALLY expression .)
+    RPAREN          reduce using rule 9 (expression -> EXIEVENTUALLY expression .)
+    EXIUNTIL        shift and go to state 23
+    FAUNTIL         shift and go to state 24
+    AND             shift and go to state 21
+    OR              shift and go to state 25
+    THEN            shift and go to state 22
+
+  ! EXIUNTIL        [ reduce using rule 9 (expression -> EXIEVENTUALLY expression .) ]
+  ! FAUNTIL         [ reduce using rule 9 (expression -> EXIEVENTUALLY expression .) ]
+  ! AND             [ reduce using rule 9 (expression -> EXIEVENTUALLY expression .) ]
+  ! OR              [ reduce using rule 9 (expression -> EXIEVENTUALLY expression .) ]
+  ! THEN            [ reduce using rule 9 (expression -> EXIEVENTUALLY expression .) ]
+
+
+state 18
+
+    (11) expression -> FAALWAYS expression .
+    (2) expression -> expression . EXIUNTIL expression
+    (3) expression -> expression . FAUNTIL expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . OR expression
+    (6) expression -> expression . THEN expression
+
+    $end            reduce using rule 11 (expression -> FAALWAYS expression .)
+    RPAREN          reduce using rule 11 (expression -> FAALWAYS expression .)
+    EXIUNTIL        shift and go to state 23
+    FAUNTIL         shift and go to state 24
+    AND             shift and go to state 21
+    OR              shift and go to state 25
+    THEN            shift and go to state 22
+
+  ! EXIUNTIL        [ reduce using rule 11 (expression -> FAALWAYS expression .) ]
+  ! FAUNTIL         [ reduce using rule 11 (expression -> FAALWAYS expression .) ]
+  ! AND             [ reduce using rule 11 (expression -> FAALWAYS expression .) ]
+  ! OR              [ reduce using rule 11 (expression -> FAALWAYS expression .) ]
+  ! THEN            [ reduce using rule 11 (expression -> FAALWAYS expression .) ]
+
+
+state 19
+
+    (13) expression -> NOT expression .
+    (2) expression -> expression . EXIUNTIL expression
+    (3) expression -> expression . FAUNTIL expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . OR expression
+    (6) expression -> expression . THEN expression
+
+    EXIUNTIL        reduce using rule 13 (expression -> NOT expression .)
+    FAUNTIL         reduce using rule 13 (expression -> NOT expression .)
+    $end            reduce using rule 13 (expression -> NOT expression .)
+    RPAREN          reduce using rule 13 (expression -> NOT expression .)
+    AND             shift and go to state 21
+    OR              shift and go to state 25
+    THEN            shift and go to state 22
+
+  ! AND             [ reduce using rule 13 (expression -> NOT expression .) ]
+  ! OR              [ reduce using rule 13 (expression -> NOT expression .) ]
+  ! THEN            [ reduce using rule 13 (expression -> NOT expression .) ]
+  ! EXIUNTIL        [ shift and go to state 23 ]
+  ! FAUNTIL         [ shift and go to state 24 ]
+
+
+state 20
+
+    (10) expression -> FANEXT expression .
+    (2) expression -> expression . EXIUNTIL expression
+    (3) expression -> expression . FAUNTIL expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . OR expression
+    (6) expression -> expression . THEN expression
+
+    $end            reduce using rule 10 (expression -> FANEXT expression .)
+    RPAREN          reduce using rule 10 (expression -> FANEXT expression .)
+    EXIUNTIL        shift and go to state 23
+    FAUNTIL         shift and go to state 24
+    AND             shift and go to state 21
+    OR              shift and go to state 25
+    THEN            shift and go to state 22
+
+  ! EXIUNTIL        [ reduce using rule 10 (expression -> FANEXT expression .) ]
+  ! FAUNTIL         [ reduce using rule 10 (expression -> FANEXT expression .) ]
+  ! AND             [ reduce using rule 10 (expression -> FANEXT expression .) ]
+  ! OR              [ reduce using rule 10 (expression -> FANEXT expression .) ]
+  ! THEN            [ reduce using rule 10 (expression -> FANEXT expression .) ]
+
+
+state 21
+
+    (4) expression -> expression AND . expression
+    (2) expression -> . expression EXIUNTIL expression
+    (3) expression -> . expression FAUNTIL expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression OR expression
+    (6) expression -> . expression THEN expression
+    (7) expression -> . EXINEXT expression
+    (8) expression -> . EXIALWAYS expression
+    (9) expression -> . EXIEVENTUALLY expression
+    (10) expression -> . FANEXT expression
+    (11) expression -> . FAALWAYS expression
+    (12) expression -> . FAEVENTUALLY expression
+    (13) expression -> . NOT expression
+    (14) expression -> . LPAREN expression RPAREN
+    (15) expression -> . NAME
+    (16) expression -> . TRUE
+
+    EXINEXT         shift and go to state 3
+    EXIALWAYS       shift and go to state 1
+    EXIEVENTUALLY   shift and go to state 5
+    FANEXT          shift and go to state 9
+    FAALWAYS        shift and go to state 6
+    FAEVENTUALLY    shift and go to state 4
+    NOT             shift and go to state 8
+    LPAREN          shift and go to state 2
+    NAME            shift and go to state 12
+    TRUE            shift and go to state 11
+
+    expression                     shift and go to state 27
+
+state 22
+
+    (6) expression -> expression THEN . expression
+    (2) expression -> . expression EXIUNTIL expression
+    (3) expression -> . expression FAUNTIL expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression OR expression
+    (6) expression -> . expression THEN expression
+    (7) expression -> . EXINEXT expression
+    (8) expression -> . EXIALWAYS expression
+    (9) expression -> . EXIEVENTUALLY expression
+    (10) expression -> . FANEXT expression
+    (11) expression -> . FAALWAYS expression
+    (12) expression -> . FAEVENTUALLY expression
+    (13) expression -> . NOT expression
+    (14) expression -> . LPAREN expression RPAREN
+    (15) expression -> . NAME
+    (16) expression -> . TRUE
+
+    EXINEXT         shift and go to state 3
+    EXIALWAYS       shift and go to state 1
+    EXIEVENTUALLY   shift and go to state 5
+    FANEXT          shift and go to state 9
+    FAALWAYS        shift and go to state 6
+    FAEVENTUALLY    shift and go to state 4
+    NOT             shift and go to state 8
+    LPAREN          shift and go to state 2
+    NAME            shift and go to state 12
+    TRUE            shift and go to state 11
+
+    expression                     shift and go to state 28
+
+state 23
+
+    (2) expression -> expression EXIUNTIL . expression
+    (2) expression -> . expression EXIUNTIL expression
+    (3) expression -> . expression FAUNTIL expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression OR expression
+    (6) expression -> . expression THEN expression
+    (7) expression -> . EXINEXT expression
+    (8) expression -> . EXIALWAYS expression
+    (9) expression -> . EXIEVENTUALLY expression
+    (10) expression -> . FANEXT expression
+    (11) expression -> . FAALWAYS expression
+    (12) expression -> . FAEVENTUALLY expression
+    (13) expression -> . NOT expression
+    (14) expression -> . LPAREN expression RPAREN
+    (15) expression -> . NAME
+    (16) expression -> . TRUE
+
+    EXINEXT         shift and go to state 3
+    EXIALWAYS       shift and go to state 1
+    EXIEVENTUALLY   shift and go to state 5
+    FANEXT          shift and go to state 9
+    FAALWAYS        shift and go to state 6
+    FAEVENTUALLY    shift and go to state 4
+    NOT             shift and go to state 8
+    LPAREN          shift and go to state 2
+    NAME            shift and go to state 12
+    TRUE            shift and go to state 11
+
+    expression                     shift and go to state 29
+
+state 24
+
+    (3) expression -> expression FAUNTIL . expression
+    (2) expression -> . expression EXIUNTIL expression
+    (3) expression -> . expression FAUNTIL expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression OR expression
+    (6) expression -> . expression THEN expression
+    (7) expression -> . EXINEXT expression
+    (8) expression -> . EXIALWAYS expression
+    (9) expression -> . EXIEVENTUALLY expression
+    (10) expression -> . FANEXT expression
+    (11) expression -> . FAALWAYS expression
+    (12) expression -> . FAEVENTUALLY expression
+    (13) expression -> . NOT expression
+    (14) expression -> . LPAREN expression RPAREN
+    (15) expression -> . NAME
+    (16) expression -> . TRUE
+
+    EXINEXT         shift and go to state 3
+    EXIALWAYS       shift and go to state 1
+    EXIEVENTUALLY   shift and go to state 5
+    FANEXT          shift and go to state 9
+    FAALWAYS        shift and go to state 6
+    FAEVENTUALLY    shift and go to state 4
+    NOT             shift and go to state 8
+    LPAREN          shift and go to state 2
+    NAME            shift and go to state 12
+    TRUE            shift and go to state 11
+
+    expression                     shift and go to state 30
+
+state 25
+
+    (5) expression -> expression OR . expression
+    (2) expression -> . expression EXIUNTIL expression
+    (3) expression -> . expression FAUNTIL expression
+    (4) expression -> . expression AND expression
+    (5) expression -> . expression OR expression
+    (6) expression -> . expression THEN expression
+    (7) expression -> . EXINEXT expression
+    (8) expression -> . EXIALWAYS expression
+    (9) expression -> . EXIEVENTUALLY expression
+    (10) expression -> . FANEXT expression
+    (11) expression -> . FAALWAYS expression
+    (12) expression -> . FAEVENTUALLY expression
+    (13) expression -> . NOT expression
+    (14) expression -> . LPAREN expression RPAREN
+    (15) expression -> . NAME
+    (16) expression -> . TRUE
+
+    EXINEXT         shift and go to state 3
+    EXIALWAYS       shift and go to state 1
+    EXIEVENTUALLY   shift and go to state 5
+    FANEXT          shift and go to state 9
+    FAALWAYS        shift and go to state 6
+    FAEVENTUALLY    shift and go to state 4
+    NOT             shift and go to state 8
+    LPAREN          shift and go to state 2
+    NAME            shift and go to state 12
+    TRUE            shift and go to state 11
+
+    expression                     shift and go to state 31
+
+state 26
+
+    (14) expression -> LPAREN expression RPAREN .
+
+    EXIUNTIL        reduce using rule 14 (expression -> LPAREN expression RPAREN .)
+    FAUNTIL         reduce using rule 14 (expression -> LPAREN expression RPAREN .)
+    AND             reduce using rule 14 (expression -> LPAREN expression RPAREN .)
+    OR              reduce using rule 14 (expression -> LPAREN expression RPAREN .)
+    THEN            reduce using rule 14 (expression -> LPAREN expression RPAREN .)
+    $end            reduce using rule 14 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 14 (expression -> LPAREN expression RPAREN .)
+
+
+state 27
+
+    (4) expression -> expression AND expression .
+    (2) expression -> expression . EXIUNTIL expression
+    (3) expression -> expression . FAUNTIL expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . OR expression
+    (6) expression -> expression . THEN expression
+
+    EXIUNTIL        reduce using rule 4 (expression -> expression AND expression .)
+    FAUNTIL         reduce using rule 4 (expression -> expression AND expression .)
+    $end            reduce using rule 4 (expression -> expression AND expression .)
+    RPAREN          reduce using rule 4 (expression -> expression AND expression .)
+    AND             shift and go to state 21
+    OR              shift and go to state 25
+    THEN            shift and go to state 22
+
+  ! AND             [ reduce using rule 4 (expression -> expression AND expression .) ]
+  ! OR              [ reduce using rule 4 (expression -> expression AND expression .) ]
+  ! THEN            [ reduce using rule 4 (expression -> expression AND expression .) ]
+  ! EXIUNTIL        [ shift and go to state 23 ]
+  ! FAUNTIL         [ shift and go to state 24 ]
+
+
+state 28
+
+    (6) expression -> expression THEN expression .
+    (2) expression -> expression . EXIUNTIL expression
+    (3) expression -> expression . FAUNTIL expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . OR expression
+    (6) expression -> expression . THEN expression
+
+    EXIUNTIL        reduce using rule 6 (expression -> expression THEN expression .)
+    FAUNTIL         reduce using rule 6 (expression -> expression THEN expression .)
+    AND             reduce using rule 6 (expression -> expression THEN expression .)
+    OR              reduce using rule 6 (expression -> expression THEN expression .)
+    $end            reduce using rule 6 (expression -> expression THEN expression .)
+    RPAREN          reduce using rule 6 (expression -> expression THEN expression .)
+    THEN            shift and go to state 22
+
+  ! THEN            [ reduce using rule 6 (expression -> expression THEN expression .) ]
+  ! EXIUNTIL        [ shift and go to state 23 ]
+  ! FAUNTIL         [ shift and go to state 24 ]
+  ! AND             [ shift and go to state 21 ]
+  ! OR              [ shift and go to state 25 ]
+
+
+state 29
+
+    (2) expression -> expression EXIUNTIL expression .
+    (2) expression -> expression . EXIUNTIL expression
+    (3) expression -> expression . FAUNTIL expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . OR expression
+    (6) expression -> expression . THEN expression
+
+    $end            reduce using rule 2 (expression -> expression EXIUNTIL expression .)
+    RPAREN          reduce using rule 2 (expression -> expression EXIUNTIL expression .)
+    EXIUNTIL        shift and go to state 23
+    FAUNTIL         shift and go to state 24
+    AND             shift and go to state 21
+    OR              shift and go to state 25
+    THEN            shift and go to state 22
+
+  ! EXIUNTIL        [ reduce using rule 2 (expression -> expression EXIUNTIL expression .) ]
+  ! FAUNTIL         [ reduce using rule 2 (expression -> expression EXIUNTIL expression .) ]
+  ! AND             [ reduce using rule 2 (expression -> expression EXIUNTIL expression .) ]
+  ! OR              [ reduce using rule 2 (expression -> expression EXIUNTIL expression .) ]
+  ! THEN            [ reduce using rule 2 (expression -> expression EXIUNTIL expression .) ]
+
+
+state 30
+
+    (3) expression -> expression FAUNTIL expression .
+    (2) expression -> expression . EXIUNTIL expression
+    (3) expression -> expression . FAUNTIL expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . OR expression
+    (6) expression -> expression . THEN expression
+
+    $end            reduce using rule 3 (expression -> expression FAUNTIL expression .)
+    RPAREN          reduce using rule 3 (expression -> expression FAUNTIL expression .)
+    EXIUNTIL        shift and go to state 23
+    FAUNTIL         shift and go to state 24
+    AND             shift and go to state 21
+    OR              shift and go to state 25
+    THEN            shift and go to state 22
+
+  ! EXIUNTIL        [ reduce using rule 3 (expression -> expression FAUNTIL expression .) ]
+  ! FAUNTIL         [ reduce using rule 3 (expression -> expression FAUNTIL expression .) ]
+  ! AND             [ reduce using rule 3 (expression -> expression FAUNTIL expression .) ]
+  ! OR              [ reduce using rule 3 (expression -> expression FAUNTIL expression .) ]
+  ! THEN            [ reduce using rule 3 (expression -> expression FAUNTIL expression .) ]
+
+
+state 31
+
+    (5) expression -> expression OR expression .
+    (2) expression -> expression . EXIUNTIL expression
+    (3) expression -> expression . FAUNTIL expression
+    (4) expression -> expression . AND expression
+    (5) expression -> expression . OR expression
+    (6) expression -> expression . THEN expression
+
+    EXIUNTIL        reduce using rule 5 (expression -> expression OR expression .)
+    FAUNTIL         reduce using rule 5 (expression -> expression OR expression .)
+    $end            reduce using rule 5 (expression -> expression OR expression .)
+    RPAREN          reduce using rule 5 (expression -> expression OR expression .)
+    AND             shift and go to state 21
+    OR              shift and go to state 25
+    THEN            shift and go to state 22
+
+  ! AND             [ reduce using rule 5 (expression -> expression OR expression .) ]
+  ! OR              [ reduce using rule 5 (expression -> expression OR expression .) ]
+  ! THEN            [ reduce using rule 5 (expression -> expression OR expression .) ]
+  ! EXIUNTIL        [ shift and go to state 23 ]
+  ! FAUNTIL         [ shift and go to state 24 ]
+

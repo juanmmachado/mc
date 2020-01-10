@@ -1,0 +1,498 @@
+Created by PLY version 3.4 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> statement
+Rule 1     statement -> expression
+Rule 2     expression -> expression UNTIL expression
+Rule 3     expression -> expression AND expression
+Rule 4     expression -> expression OR expression
+Rule 5     expression -> expression THEN expression
+Rule 6     expression -> NEXT expression
+Rule 7     expression -> ALWAYS expression
+Rule 8     expression -> EVENTUALLY expression
+Rule 9     expression -> NOT expression
+Rule 10    expression -> LPAREN expression RPAREN
+Rule 11    expression -> NAME
+
+Terminals, with rules where they appear
+
+ALWAYS               : 7
+AND                  : 3
+EVENTUALLY           : 8
+LPAREN               : 10
+NAME                 : 11
+NEXT                 : 6
+NOT                  : 9
+OR                   : 4
+RPAREN               : 10
+THEN                 : 5
+UNTIL                : 2
+error                : 
+
+Nonterminals, with rules where they appear
+
+expression           : 1 2 2 3 3 4 4 5 5 6 7 8 9 10
+statement            : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . statement
+    (1) statement -> . expression
+    (2) expression -> . expression UNTIL expression
+    (3) expression -> . expression AND expression
+    (4) expression -> . expression OR expression
+    (5) expression -> . expression THEN expression
+    (6) expression -> . NEXT expression
+    (7) expression -> . ALWAYS expression
+    (8) expression -> . EVENTUALLY expression
+    (9) expression -> . NOT expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . NAME
+
+    NEXT            shift and go to state 6
+    ALWAYS          shift and go to state 3
+    EVENTUALLY      shift and go to state 2
+    NOT             shift and go to state 5
+    LPAREN          shift and go to state 1
+    NAME            shift and go to state 8
+
+    expression                     shift and go to state 7
+    statement                      shift and go to state 4
+
+state 1
+
+    (10) expression -> LPAREN . expression RPAREN
+    (2) expression -> . expression UNTIL expression
+    (3) expression -> . expression AND expression
+    (4) expression -> . expression OR expression
+    (5) expression -> . expression THEN expression
+    (6) expression -> . NEXT expression
+    (7) expression -> . ALWAYS expression
+    (8) expression -> . EVENTUALLY expression
+    (9) expression -> . NOT expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . NAME
+
+    NEXT            shift and go to state 6
+    ALWAYS          shift and go to state 3
+    EVENTUALLY      shift and go to state 2
+    NOT             shift and go to state 5
+    LPAREN          shift and go to state 1
+    NAME            shift and go to state 8
+
+    expression                     shift and go to state 9
+
+state 2
+
+    (8) expression -> EVENTUALLY . expression
+    (2) expression -> . expression UNTIL expression
+    (3) expression -> . expression AND expression
+    (4) expression -> . expression OR expression
+    (5) expression -> . expression THEN expression
+    (6) expression -> . NEXT expression
+    (7) expression -> . ALWAYS expression
+    (8) expression -> . EVENTUALLY expression
+    (9) expression -> . NOT expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . NAME
+
+    NEXT            shift and go to state 6
+    ALWAYS          shift and go to state 3
+    EVENTUALLY      shift and go to state 2
+    NOT             shift and go to state 5
+    LPAREN          shift and go to state 1
+    NAME            shift and go to state 8
+
+    expression                     shift and go to state 10
+
+state 3
+
+    (7) expression -> ALWAYS . expression
+    (2) expression -> . expression UNTIL expression
+    (3) expression -> . expression AND expression
+    (4) expression -> . expression OR expression
+    (5) expression -> . expression THEN expression
+    (6) expression -> . NEXT expression
+    (7) expression -> . ALWAYS expression
+    (8) expression -> . EVENTUALLY expression
+    (9) expression -> . NOT expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . NAME
+
+    NEXT            shift and go to state 6
+    ALWAYS          shift and go to state 3
+    EVENTUALLY      shift and go to state 2
+    NOT             shift and go to state 5
+    LPAREN          shift and go to state 1
+    NAME            shift and go to state 8
+
+    expression                     shift and go to state 11
+
+state 4
+
+    (0) S' -> statement .
+
+
+
+state 5
+
+    (9) expression -> NOT . expression
+    (2) expression -> . expression UNTIL expression
+    (3) expression -> . expression AND expression
+    (4) expression -> . expression OR expression
+    (5) expression -> . expression THEN expression
+    (6) expression -> . NEXT expression
+    (7) expression -> . ALWAYS expression
+    (8) expression -> . EVENTUALLY expression
+    (9) expression -> . NOT expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . NAME
+
+    NEXT            shift and go to state 6
+    ALWAYS          shift and go to state 3
+    EVENTUALLY      shift and go to state 2
+    NOT             shift and go to state 5
+    LPAREN          shift and go to state 1
+    NAME            shift and go to state 8
+
+    expression                     shift and go to state 12
+
+state 6
+
+    (6) expression -> NEXT . expression
+    (2) expression -> . expression UNTIL expression
+    (3) expression -> . expression AND expression
+    (4) expression -> . expression OR expression
+    (5) expression -> . expression THEN expression
+    (6) expression -> . NEXT expression
+    (7) expression -> . ALWAYS expression
+    (8) expression -> . EVENTUALLY expression
+    (9) expression -> . NOT expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . NAME
+
+    NEXT            shift and go to state 6
+    ALWAYS          shift and go to state 3
+    EVENTUALLY      shift and go to state 2
+    NOT             shift and go to state 5
+    LPAREN          shift and go to state 1
+    NAME            shift and go to state 8
+
+    expression                     shift and go to state 13
+
+state 7
+
+    (1) statement -> expression .
+    (2) expression -> expression . UNTIL expression
+    (3) expression -> expression . AND expression
+    (4) expression -> expression . OR expression
+    (5) expression -> expression . THEN expression
+
+    $end            reduce using rule 1 (statement -> expression .)
+    UNTIL           shift and go to state 16
+    AND             shift and go to state 14
+    OR              shift and go to state 17
+    THEN            shift and go to state 15
+
+
+state 8
+
+    (11) expression -> NAME .
+
+    UNTIL           reduce using rule 11 (expression -> NAME .)
+    AND             reduce using rule 11 (expression -> NAME .)
+    OR              reduce using rule 11 (expression -> NAME .)
+    THEN            reduce using rule 11 (expression -> NAME .)
+    $end            reduce using rule 11 (expression -> NAME .)
+    RPAREN          reduce using rule 11 (expression -> NAME .)
+
+
+state 9
+
+    (10) expression -> LPAREN expression . RPAREN
+    (2) expression -> expression . UNTIL expression
+    (3) expression -> expression . AND expression
+    (4) expression -> expression . OR expression
+    (5) expression -> expression . THEN expression
+
+    RPAREN          shift and go to state 18
+    UNTIL           shift and go to state 16
+    AND             shift and go to state 14
+    OR              shift and go to state 17
+    THEN            shift and go to state 15
+
+
+state 10
+
+    (8) expression -> EVENTUALLY expression .
+    (2) expression -> expression . UNTIL expression
+    (3) expression -> expression . AND expression
+    (4) expression -> expression . OR expression
+    (5) expression -> expression . THEN expression
+
+    $end            reduce using rule 8 (expression -> EVENTUALLY expression .)
+    RPAREN          reduce using rule 8 (expression -> EVENTUALLY expression .)
+    UNTIL           shift and go to state 16
+    AND             shift and go to state 14
+    OR              shift and go to state 17
+    THEN            shift and go to state 15
+
+  ! UNTIL           [ reduce using rule 8 (expression -> EVENTUALLY expression .) ]
+  ! AND             [ reduce using rule 8 (expression -> EVENTUALLY expression .) ]
+  ! OR              [ reduce using rule 8 (expression -> EVENTUALLY expression .) ]
+  ! THEN            [ reduce using rule 8 (expression -> EVENTUALLY expression .) ]
+
+
+state 11
+
+    (7) expression -> ALWAYS expression .
+    (2) expression -> expression . UNTIL expression
+    (3) expression -> expression . AND expression
+    (4) expression -> expression . OR expression
+    (5) expression -> expression . THEN expression
+
+    $end            reduce using rule 7 (expression -> ALWAYS expression .)
+    RPAREN          reduce using rule 7 (expression -> ALWAYS expression .)
+    UNTIL           shift and go to state 16
+    AND             shift and go to state 14
+    OR              shift and go to state 17
+    THEN            shift and go to state 15
+
+  ! UNTIL           [ reduce using rule 7 (expression -> ALWAYS expression .) ]
+  ! AND             [ reduce using rule 7 (expression -> ALWAYS expression .) ]
+  ! OR              [ reduce using rule 7 (expression -> ALWAYS expression .) ]
+  ! THEN            [ reduce using rule 7 (expression -> ALWAYS expression .) ]
+
+
+state 12
+
+    (9) expression -> NOT expression .
+    (2) expression -> expression . UNTIL expression
+    (3) expression -> expression . AND expression
+    (4) expression -> expression . OR expression
+    (5) expression -> expression . THEN expression
+
+    UNTIL           reduce using rule 9 (expression -> NOT expression .)
+    $end            reduce using rule 9 (expression -> NOT expression .)
+    RPAREN          reduce using rule 9 (expression -> NOT expression .)
+    AND             shift and go to state 14
+    OR              shift and go to state 17
+    THEN            shift and go to state 15
+
+  ! AND             [ reduce using rule 9 (expression -> NOT expression .) ]
+  ! OR              [ reduce using rule 9 (expression -> NOT expression .) ]
+  ! THEN            [ reduce using rule 9 (expression -> NOT expression .) ]
+  ! UNTIL           [ shift and go to state 16 ]
+
+
+state 13
+
+    (6) expression -> NEXT expression .
+    (2) expression -> expression . UNTIL expression
+    (3) expression -> expression . AND expression
+    (4) expression -> expression . OR expression
+    (5) expression -> expression . THEN expression
+
+    $end            reduce using rule 6 (expression -> NEXT expression .)
+    RPAREN          reduce using rule 6 (expression -> NEXT expression .)
+    UNTIL           shift and go to state 16
+    AND             shift and go to state 14
+    OR              shift and go to state 17
+    THEN            shift and go to state 15
+
+  ! UNTIL           [ reduce using rule 6 (expression -> NEXT expression .) ]
+  ! AND             [ reduce using rule 6 (expression -> NEXT expression .) ]
+  ! OR              [ reduce using rule 6 (expression -> NEXT expression .) ]
+  ! THEN            [ reduce using rule 6 (expression -> NEXT expression .) ]
+
+
+state 14
+
+    (3) expression -> expression AND . expression
+    (2) expression -> . expression UNTIL expression
+    (3) expression -> . expression AND expression
+    (4) expression -> . expression OR expression
+    (5) expression -> . expression THEN expression
+    (6) expression -> . NEXT expression
+    (7) expression -> . ALWAYS expression
+    (8) expression -> . EVENTUALLY expression
+    (9) expression -> . NOT expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . NAME
+
+    NEXT            shift and go to state 6
+    ALWAYS          shift and go to state 3
+    EVENTUALLY      shift and go to state 2
+    NOT             shift and go to state 5
+    LPAREN          shift and go to state 1
+    NAME            shift and go to state 8
+
+    expression                     shift and go to state 19
+
+state 15
+
+    (5) expression -> expression THEN . expression
+    (2) expression -> . expression UNTIL expression
+    (3) expression -> . expression AND expression
+    (4) expression -> . expression OR expression
+    (5) expression -> . expression THEN expression
+    (6) expression -> . NEXT expression
+    (7) expression -> . ALWAYS expression
+    (8) expression -> . EVENTUALLY expression
+    (9) expression -> . NOT expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . NAME
+
+    NEXT            shift and go to state 6
+    ALWAYS          shift and go to state 3
+    EVENTUALLY      shift and go to state 2
+    NOT             shift and go to state 5
+    LPAREN          shift and go to state 1
+    NAME            shift and go to state 8
+
+    expression                     shift and go to state 20
+
+state 16
+
+    (2) expression -> expression UNTIL . expression
+    (2) expression -> . expression UNTIL expression
+    (3) expression -> . expression AND expression
+    (4) expression -> . expression OR expression
+    (5) expression -> . expression THEN expression
+    (6) expression -> . NEXT expression
+    (7) expression -> . ALWAYS expression
+    (8) expression -> . EVENTUALLY expression
+    (9) expression -> . NOT expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . NAME
+
+    NEXT            shift and go to state 6
+    ALWAYS          shift and go to state 3
+    EVENTUALLY      shift and go to state 2
+    NOT             shift and go to state 5
+    LPAREN          shift and go to state 1
+    NAME            shift and go to state 8
+
+    expression                     shift and go to state 21
+
+state 17
+
+    (4) expression -> expression OR . expression
+    (2) expression -> . expression UNTIL expression
+    (3) expression -> . expression AND expression
+    (4) expression -> . expression OR expression
+    (5) expression -> . expression THEN expression
+    (6) expression -> . NEXT expression
+    (7) expression -> . ALWAYS expression
+    (8) expression -> . EVENTUALLY expression
+    (9) expression -> . NOT expression
+    (10) expression -> . LPAREN expression RPAREN
+    (11) expression -> . NAME
+
+    NEXT            shift and go to state 6
+    ALWAYS          shift and go to state 3
+    EVENTUALLY      shift and go to state 2
+    NOT             shift and go to state 5
+    LPAREN          shift and go to state 1
+    NAME            shift and go to state 8
+
+    expression                     shift and go to state 22
+
+state 18
+
+    (10) expression -> LPAREN expression RPAREN .
+
+    UNTIL           reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    AND             reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    OR              reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    THEN            reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    $end            reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 10 (expression -> LPAREN expression RPAREN .)
+
+
+state 19
+
+    (3) expression -> expression AND expression .
+    (2) expression -> expression . UNTIL expression
+    (3) expression -> expression . AND expression
+    (4) expression -> expression . OR expression
+    (5) expression -> expression . THEN expression
+
+    UNTIL           reduce using rule 3 (expression -> expression AND expression .)
+    $end            reduce using rule 3 (expression -> expression AND expression .)
+    RPAREN          reduce using rule 3 (expression -> expression AND expression .)
+    AND             shift and go to state 14
+    OR              shift and go to state 17
+    THEN            shift and go to state 15
+
+  ! AND             [ reduce using rule 3 (expression -> expression AND expression .) ]
+  ! OR              [ reduce using rule 3 (expression -> expression AND expression .) ]
+  ! THEN            [ reduce using rule 3 (expression -> expression AND expression .) ]
+  ! UNTIL           [ shift and go to state 16 ]
+
+
+state 20
+
+    (5) expression -> expression THEN expression .
+    (2) expression -> expression . UNTIL expression
+    (3) expression -> expression . AND expression
+    (4) expression -> expression . OR expression
+    (5) expression -> expression . THEN expression
+
+    UNTIL           reduce using rule 5 (expression -> expression THEN expression .)
+    AND             reduce using rule 5 (expression -> expression THEN expression .)
+    OR              reduce using rule 5 (expression -> expression THEN expression .)
+    $end            reduce using rule 5 (expression -> expression THEN expression .)
+    RPAREN          reduce using rule 5 (expression -> expression THEN expression .)
+    THEN            shift and go to state 15
+
+  ! THEN            [ reduce using rule 5 (expression -> expression THEN expression .) ]
+  ! UNTIL           [ shift and go to state 16 ]
+  ! AND             [ shift and go to state 14 ]
+  ! OR              [ shift and go to state 17 ]
+
+
+state 21
+
+    (2) expression -> expression UNTIL expression .
+    (2) expression -> expression . UNTIL expression
+    (3) expression -> expression . AND expression
+    (4) expression -> expression . OR expression
+    (5) expression -> expression . THEN expression
+
+    $end            reduce using rule 2 (expression -> expression UNTIL expression .)
+    RPAREN          reduce using rule 2 (expression -> expression UNTIL expression .)
+    UNTIL           shift and go to state 16
+    AND             shift and go to state 14
+    OR              shift and go to state 17
+    THEN            shift and go to state 15
+
+  ! UNTIL           [ reduce using rule 2 (expression -> expression UNTIL expression .) ]
+  ! AND             [ reduce using rule 2 (expression -> expression UNTIL expression .) ]
+  ! OR              [ reduce using rule 2 (expression -> expression UNTIL expression .) ]
+  ! THEN            [ reduce using rule 2 (expression -> expression UNTIL expression .) ]
+
+
+state 22
+
+    (4) expression -> expression OR expression .
+    (2) expression -> expression . UNTIL expression
+    (3) expression -> expression . AND expression
+    (4) expression -> expression . OR expression
+    (5) expression -> expression . THEN expression
+
+    UNTIL           reduce using rule 4 (expression -> expression OR expression .)
+    $end            reduce using rule 4 (expression -> expression OR expression .)
+    RPAREN          reduce using rule 4 (expression -> expression OR expression .)
+    AND             shift and go to state 14
+    OR              shift and go to state 17
+    THEN            shift and go to state 15
+
+  ! AND             [ reduce using rule 4 (expression -> expression OR expression .) ]
+  ! OR              [ reduce using rule 4 (expression -> expression OR expression .) ]
+  ! THEN            [ reduce using rule 4 (expression -> expression OR expression .) ]
+  ! UNTIL           [ shift and go to state 16 ]
+

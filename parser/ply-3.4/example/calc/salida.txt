@@ -1,0 +1,276 @@
+(alpha UNTIL beta)
+############## TS ###############
+iniciales:
+(
+n0
+alpha
+)
+estados:
+100
+(
+n0
+alpha
+)
+adyacentes:
+(
+n1
+beta
+)
+101
+(
+n1
+beta
+)
+adyacentes:
+(
+n1
+beta
+)
+############## GNBA ###############
+Estados:
+1
+estado: 0
+(alpha UNTIL beta)
+alpha
+(NOT beta)
+estado: 0
+(alpha UNTIL beta)
+alpha
+(NOT beta)
+estado: 1
+(alpha UNTIL beta)
+beta
+alpha
+estado: 2
+(alpha UNTIL beta)
+beta
+(NOT alpha)
+2
+estado: 1
+(alpha UNTIL beta)
+beta
+alpha
+estado: 0
+(alpha UNTIL beta)
+alpha
+(NOT beta)
+estado: 1
+(alpha UNTIL beta)
+beta
+alpha
+estado: 2
+(alpha UNTIL beta)
+beta
+(NOT alpha)
+estado: 3
+(NOT (alpha UNTIL beta))
+(NOT beta)
+alpha
+estado: 4
+(NOT (alpha UNTIL beta))
+(NOT beta)
+(NOT alpha)
+3
+estado: 2
+(alpha UNTIL beta)
+beta
+(NOT alpha)
+estado: 0
+(alpha UNTIL beta)
+alpha
+(NOT beta)
+estado: 1
+(alpha UNTIL beta)
+beta
+alpha
+estado: 2
+(alpha UNTIL beta)
+beta
+(NOT alpha)
+estado: 3
+(NOT (alpha UNTIL beta))
+(NOT beta)
+alpha
+estado: 4
+(NOT (alpha UNTIL beta))
+(NOT beta)
+(NOT alpha)
+4
+estado: 3
+(NOT (alpha UNTIL beta))
+(NOT beta)
+alpha
+estado: 3
+(NOT (alpha UNTIL beta))
+(NOT beta)
+alpha
+estado: 4
+(NOT (alpha UNTIL beta))
+(NOT beta)
+(NOT alpha)
+5
+estado: 4
+(NOT (alpha UNTIL beta))
+(NOT beta)
+(NOT alpha)
+estado: 0
+(alpha UNTIL beta)
+alpha
+(NOT beta)
+estado: 1
+(alpha UNTIL beta)
+beta
+alpha
+estado: 2
+(alpha UNTIL beta)
+beta
+(NOT alpha)
+estado: 3
+(NOT (alpha UNTIL beta))
+(NOT beta)
+alpha
+estado: 4
+(NOT (alpha UNTIL beta))
+(NOT beta)
+(NOT alpha)
+Iniciales:
+estado: 0
+(alpha UNTIL beta)
+alpha
+(NOT beta)
+estado: 1
+(alpha UNTIL beta)
+beta
+alpha
+estado: 2
+(alpha UNTIL beta)
+beta
+(NOT alpha)
+Acceptance sets
+1
+estado: 1
+(alpha UNTIL beta)
+beta
+alpha
+estado: 2
+(alpha UNTIL beta)
+beta
+(NOT alpha)
+estado: 3
+(NOT (alpha UNTIL beta))
+(NOT beta)
+alpha
+estado: 4
+(NOT (alpha UNTIL beta))
+(NOT beta)
+(NOT alpha)
+cantidad de acceptance sets
+0
+############## PRODUCTO ###############
+***ESTADOS***
+estado
+1000
+(
+n0
+0
+)
+adyacentes
+(
+n1
+1
+)
+(
+n1
+2
+)
+estado
+1001
+(
+n0
+1
+)
+adyacentes
+(
+n1
+1
+)
+(
+n1
+2
+)
+estado
+1002
+(
+n0
+3
+)
+adyacentes
+estado
+1003
+(
+n1
+1
+)
+adyacentes
+(
+n1
+1
+)
+(
+n1
+2
+)
+estado
+1004
+(
+n1
+2
+)
+adyacentes
+(
+n1
+1
+)
+(
+n1
+2
+)
+***INICIALES***
+estado
+(
+n0
+0
+)
+estado
+(
+n0
+1
+)
+estado
+(
+n0
+3
+)
+***ACCEPTANCE SETS***
+1000
+estado
+(
+n0
+1
+)
+estado
+(
+n0
+3
+)
+estado
+(
+n1
+1
+)
+estado
+(
+n1
+2
+)
+[]
