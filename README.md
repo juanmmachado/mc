@@ -1,4 +1,4 @@
-# Este verificador de modelos implementa operaciones entre sistemas de tran- siciones, de forma de poder trabajar con sistemas de transiciones complejos generados a partir de otros mas simples. Las operaciones implementadas son el Intercalado y el Handshaking.
+# Este verificador de modelos implementa operaciones entre sistemas de transiciones, de forma de poder trabajar con sistemas de transiciones complejos generados a partir de otros mas simples. Las operaciones implementadas son el Intercalado y el Handshaking.
 
 # Intercalado
 python MC.py ic <TS1.graphml> <TS2.graphml> <intercalado.graphml>
